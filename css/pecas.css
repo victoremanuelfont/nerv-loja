@@ -1,0 +1,222 @@
+/* Font importing */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Resetando css*/
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+    outline: none;
+    font-family: "Roboto", sans-serif;
+}
+
+:root{
+    --orange: #f78b00;
+    --blue: #00285f;
+    --gray: #ededed;
+    --roxo: #5f2a62;
+    --verde: #a0de59;
+    --amarelo: #f5c024;
+    --roxo-claro: #a976c3;
+    --verde-escuro: #466b5a;
+}
+
+html,
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+header{
+    width:769.14;
+    height:125px;
+    background:var(--amarelo)
+
+}
+
+.conteudo{
+    max-width: 1000px;
+    min-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+}
+
+nav{
+    width: 100%;
+    height:125px;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav img {
+    height: 200px; 
+    width: auto;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+nav ul li a {
+
+    color: var(--blue);
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    color:#00285f83;
+}
+
+.conteudo .painel{
+    max-width: 1000px;
+    min-width: 300px;
+    height: 450px;
+    background: var(--blue);
+    border-radius: 8px;
+    box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.5);
+
+    position: relative;
+    z-index: 10;
+    padding: 10px;
+}
+
+.painel img {
+    width: 32%;
+    position: absolute;
+    right: 9%;
+    bottom: 4%;
+}
+
+.painel .texto{
+    position: absolute;
+    bottom: 40%;
+    left: 10%;
+}
+
+.painel .texto h2{
+    color: white;
+    margin-bottom: 25px;
+    text-align: right;
+    transform: translateX(-20px);
+    transition: transform 0.5s;
+}
+
+.painel .texto p {
+    max-width:450px;
+    color: white;
+    text-align: right;
+    transform: translateX(-20px);
+    transition: transform 0.4s;
+}
+
+.pecas{
+     width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0px;
+}
+
+.texto-pecas{
+    padding: 20px 0px;
+}
+
+.pecas-card-block{
+    max-width: 1000px;
+    min-width: 300px;
+    height: 600px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 8px;
+    z-index: 10;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px,1fr));
+    grid-gap: 30px;
+}
+
+.pecas-card-item{
+    max-width: 420px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-around;
+    border: 1px solid #dedede3b;
+    border-radius: 4px;
+}
+
+.pecas-texto-conteudo{
+    max-width: 60%;
+    margin: 5px;
+}
+
+.pecas-card-item img {
+    width: 64px;
+    height: 64px;
+}
+
+/* footer */
+
+footer .main {
+    width: 100%;
+    height: 200px;
+    background: var(--amarelo);
+    padding: 20px 10px;
+}
+
+.footer-links{
+    max-width: 1000px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.footer-company, 
+.footer-rental, 
+.footer-contact, 
+.footer-social{
+    color:white;
+    height:100%;
+    min-height:100px;
+}
+
+.footer-links h4 {
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    margin-bottom: 8px;
+}
+
+.main .footer-social img {
+    width: 32px;
+    height: 32px;
+}
+
+footer .last{
+    width: 100%;
+    height: 50px;
+    background: var(--blue);
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
