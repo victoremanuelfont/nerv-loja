@@ -1,63 +1,45 @@
-/* Font importing */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* css/pecas.css - Tema MAGI Oficial */
 
-/* Resetando css*/
-*{
-    margin:0px;
-    padding:0px;
-    box-sizing:border-box;
-    outline: none;
-    font-family: "Roboto", sans-serif;
-}
+/* O global.css já cuida do reset e fontes */
 
-:root{
-    --orange: #f78b00;
-    --blue: #00285f;
-    --gray: #ededed;
-    --roxo: #5f2a62;
-    --verde: #a0de59;
-    --amarelo: #f5c024;
-    --roxo-claro: #a976c3;
-    --verde-escuro: #466b5a;
-}
-
-html,
-body{
+html, body {
     width: 100%;
     overflow-x: hidden;
 }
 
-header{
-    width:769.14;
-    height:125px;
-    background:var(--amarelo)
-
+/* --- HEADER --- */
+header {
+    width: 100%;
+    height: 125px;
+    background: var(--bg-deep);
+    border-bottom: var(--border-tech);
 }
 
-.conteudo{
+.conteudo {
     max-width: 1000px;
     min-width: 300px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    padding:10px;
+    padding: 10px;
 }
 
-nav{
+nav {
     width: 100%;
-    height:125px;
+    height: 125px;
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
 nav img {
-    height: 200px; 
+    height: 80px;
     width: auto;
+    filter: drop-shadow(0 0 2px var(--nerv-orange));
 }
 
-nav ul{
+nav ul {
     display: flex;
     flex-direction: row;
 }
@@ -69,154 +51,172 @@ nav ul li {
 }
 
 nav ul li a {
-
-    color: var(--blue);
+    color: var(--text-muted);
     text-decoration: none;
+    font-family: var(--font-tech);
+    transition: 0.3s;
+    text-transform: uppercase;
 }
 
-nav ul li a:hover{
-    color:#00285f83;
+nav ul li a:hover {
+    color: var(--nerv-orange);
+    text-shadow: var(--glow);
 }
 
-.conteudo .painel{
-    max-width: 1000px;
-    min-width: 300px;
-    height: 450px;
-    background: var(--blue);
-    border-radius: 8px;
-    box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.5);
-    -webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.5);
-    -moz-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.5);
+/* --- SEÇÃO ARSENAL (Dark Mode) --- */
 
-    position: relative;
-    z-index: 10;
-    padding: 10px;
-}
-
-.painel img {
-    width: 32%;
-    position: absolute;
-    right: 9%;
-    bottom: 4%;
-}
-
-.painel .texto{
-    position: absolute;
-    bottom: 40%;
-    left: 10%;
-}
-
-.painel .texto h2{
-    color: white;
-    margin-bottom: 25px;
-    text-align: right;
-    transform: translateX(-20px);
-    transition: transform 0.5s;
-}
-
-.painel .texto p {
-    max-width:450px;
-    color: white;
-    text-align: right;
-    transform: translateX(-20px);
-    transition: transform 0.4s;
-}
-
-.pecas{
-     width: 100%;
-    height: 100%;
-    background: white;
+.pecas {
+    width: 100%;
+    min-height: 80vh;
+    background-color: var(--bg-deep); /* Fundo Preto */
+    /* Grid decorativo */
+    background-image: 
+        linear-gradient(rgba(255, 157, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 157, 0, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    padding: 50px 0px;
+    padding: 50px 0;
 }
 
-.texto-pecas{
-    padding: 20px 0px;
+.texto-pecas {
+    padding: 20px 0;
+    text-align: left;
+    border-bottom: 1px solid #333;
+    margin-bottom: 30px;
 }
 
-.pecas-card-block{
+.texto-pecas h3 {
+    color: var(--nerv-orange);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.texto-pecas p {
+    color: var(--text-muted);
+    font-family: var(--font-tech);
+    letter-spacing: 1px;
+}
+
+/* O Container das Peças */
+.pecas-card-block {
     max-width: 1000px;
-    min-width: 300px;
-    height: 600px;
-    background: white;
+    width: 100%;
+    background: transparent; /* Transparente para ver o fundo preto */
     margin: 0 auto;
-    border-radius: 8px;
     z-index: 10;
-    padding: 50px;
+    padding: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(420px,1fr));
-    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
 }
 
-.pecas-card-item{
-    max-width: 420px;
+/* O Card Individual (Gaveta) */
+.pecas-card-item {
+    background: var(--bg-panel); /* Cinza escuro */
     height: 150px;
     display: flex;
     flex-direction: row;
-    align-items:center;
-    justify-content: space-around;
-    border: 1px solid #dedede3b;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 3px solid var(--text-muted);
     border-radius: 4px;
+    padding: 20px;
+    transition: 0.3s ease;
+    cursor: pointer;
 }
 
-.pecas-texto-conteudo{
-    max-width: 60%;
-    margin: 5px;
+.pecas-card-item:hover {
+    border-color: var(--nerv-orange);
+    border-left-color: var(--nerv-orange);
+    background: #1a1a1a;
+    transform: translateX(5px);
+    box-shadow: var(--glow);
 }
 
 .pecas-card-item img {
     width: 64px;
     height: 64px;
+    filter: grayscale(100%); /* Fica preto e branco */
+    transition: 0.3s;
 }
 
-/* footer */
+.pecas-card-item:hover img {
+    filter: grayscale(0%) drop-shadow(0 0 5px var(--nerv-orange)); /* Ganha cor no hover */
+}
 
+.pecas-texto-conteudo {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pecas-texto-conteudo h3 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.pecas-texto-conteudo p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* --- FOOTER --- */
 footer .main {
     width: 100%;
-    height: 200px;
-    background: var(--amarelo);
-    padding: 20px 10px;
+    background: var(--bg-panel);
+    padding: 60px 20px;
+    border-top: var(--border-tech);
 }
 
-.footer-links{
+.footer-links {
     max-width: 1000px;
-    min-width: 300px;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .footer-company, 
 .footer-rental, 
 .footer-contact, 
-.footer-social{
-    color:white;
-    height:100%;
-    min-height:100px;
+.footer-social {
+    color: var(--text-muted);
 }
 
 .footer-links h4 {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: var(--nerv-orange);
+    font-size: 1.1rem;
 }
 
-.footer-links {
+.footer-links h6 {
     margin-bottom: 8px;
+    font-weight: normal;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-.main .footer-social img {
-    width: 32px;
-    height: 32px;
+.footer-links h6:hover {
+    color: var(--text-primary);
+    padding-left: 5px;
 }
 
-footer .last{
+footer .last {
     width: 100%;
-    height: 50px;
-    background: var(--blue);
-    color:white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 20px;
+    background: var(--bg-deep);
+    color: var(--text-muted);
+    text-align: center;
+    font-size: 0.8rem;
+    font-family: var(--font-tech);
+    border-top: 1px solid #222;
 }
