@@ -1,394 +1,264 @@
-/* Font importing */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* css/catalogo.css - Refatorado para MAGI System */
 
-/* Resetando css*/
-*{
-    margin:0px;
-    padding:0px;
-    box-sizing:border-box;
-    outline: none;
-    font-family: "Roboto", sans-serif;
-}
+/* NOTA: Não precisamos mais de @import ou :root aqui, 
+   pois o global.css já carrega isso para nós. */
 
-:root{
-    --orange: #f78b00;
-    --blue: #00285f;
-    --gray: #ededed;
-    --roxo: #5f2a62;
-    --verde: #a0de59;
-    --amarelo: #f5c024;
-    --roxo-claro: #a976c3;
-    --verde-escuro: #466b5a;
-}
-
-html,
-body{
-    width: 100%;
-    overflow-x: hidden;
-}
-
-header{
-    width:769.14;
-    height:125px;
-    background:var(--amarelo)
-
-}
-
-.conteudo{
-    max-width: 1000px;
-    min-width: 300px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    padding:10px;
-}
-
-nav{
-    width: 100%;
-    height:125px;
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-nav img {
-    height: 200px; 
-    width: auto;
-}
-
-nav ul{
-    display: flex;
-    flex-direction: row;
-}
-
-nav ul li {
-    list-style: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-nav ul li a {
-
-    color: var(--blue);
-    text-decoration: none;
-}
-
-nav ul li a:hover{
-    color:#00285f83;
-}
-
-.conteudo .painel{
-    max-width: 1000px;
-    min-width: 300px;
-    height: 450px;
-    background: var(--blue);
-    border-radius: 8px;
-    box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.5);
-    -webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.5);
-    -moz-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.5);
-
-    position: relative;
-    z-index: 10;
-    padding: 10px;
-}
-
-.painel img {
-    width: 32%;
-    position: absolute;
-    right: 9%;
-    bottom: 4%;
-}
-
-.painel .texto{
-    position: absolute;
-    bottom: 40%;
-    left: 10%;
-}
-
-.painel .texto h2{
-    color: white;
-    margin-bottom: 25px;
-    text-align: right;
-    transform: translateX(-20px);
-    transition: transform 0.5s;
-}
-
-.painel .texto p {
-    max-width:450px;
-    color: white;
-    text-align: right;
-    transform: translateX(-20px);
-    transition: transform 0.4s;
-}
-
-
-/* cATÁLOGO */
-
-section .catalogo{
-    width: 100vw;
-    padding: 100px;
-}
-
-section .filtro-de-pesquisa{
-    width: 980px;
-    height: 150px;
-    background: var(--roxo-claro);
-    border-radius: 8px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.search-input{
-    width: 700px;
-    height: 50px;
-    border: none;
-    border-radius: 4px 0px 0px 4px;
-    border: 10px;
-}
-
-.search-button{
-    width: 150px;
-    height: 50px;
-    border-radius: 0px 4px 4px 0px;
-    background: var(--blue);
-    color: white;
-    cursor: pointer;
-    font-size:1.1em;
-    transition: 0.2s ease;
-}
-
-.search-button:hover{
-    background: #dedede;
-    color: var(--blue);
-}
-
-.barra-de-pesquisa{
-    margin-top: 50px;
-    padding-bottom: 20px;
-}
-
-section .card-wrapper{
-    max-width: 1000px;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    grid-gap: 30px;
-    padding:50px;
-}
-
-section .card-item, .card-item-2{
-    height: 400px;
-    background: var(--gray);
-    border-radius: 8px;
-    display: flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content: space-around;
-}
-
-
-.card-content{
-    height: 40%;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.card-item img {
-    width: 65%;
-}
-
-.card-item-2 img {
-    width: 55%;
-}
-
-.card-item h4 {
-    width: 90%;
-}
-
-.card-item button, .card-item-2 button {
-    width: 90%;
-    padding: 15px 0px;
-    border: none;
-    background-color: var(--blue);
-    border-radius: 4px;
-    color: white;
-    font-weight: bold;
-    font-size:1.1em;
-    cursor: pointer;
-    transition: 0.3s ease;
-    margin-bottom: 10px;
-}
-
-
-.card-item button:hover{
-    background: #dedede;
-    color:var(--blue)
-}
-
-.card-item-2 button:hover{
-    background: #dedede;
-    color:var(--blue)
-}
-
-
-.pecas{
-     width: 100%;
-    height: 100%;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 0px;
-}
-
-.texto-pecas{
-    padding: 20px 0px;
-}
-
-.pecas-card-block{
-    max-width: 1000px;
-    min-width: 300px;
-    height: 600px;
-    background: white;
-    margin: 0 auto;
-    border-radius: 8px;
-    z-index: 10;
-    padding: 50px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(420px,1fr));
-    grid-gap: 30px;
-}
-
-.pecas-card-item{
-    max-width: 420px;
-    height: 150px;
-    display: flex;
-    flex-direction: row;
-    align-items:center;
-    justify-content: space-around;
-    border: 1px solid #dedede3b;
-    border-radius: 4px;
-}
-
-.pecas-texto-conteudo{
-    max-width: 60%;
-    margin: 5px;
-}
-
-.pecas-card-item img {
-    width: 64px;
-    height: 64px;
-}
-
-.sobre{
-    width:100%;
-    height:100%;
-    background: var(--roxo-claro);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 10px;
-}
-
-.sobre-conteudo{
-    max-width: 1000px;
-    min-width: 300px;
-    height: 600px;
-    background: #dedede3b;
-    margin: 0 auto;
-    border-radius: 8px;
-    z-index: 10;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.left {
-    width: 25%;
-    min-width: 300px;
-    height: 100%;
-    background: #000000a1;
-    border-radius: 8px;
-}
-
-.right {
-   width: 65%;
-   height: 100%;
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
-   justify-content: flex-start;
-   padding-top: 10%;
-}
-
-.right h3 {
-    text-align: right;
-    width: 90%;
-    margin-bottom: 20px;
-}
-
-.right p {
-    max-width: 90%;
-    font-size: 1em;
-    letter-spacing: 2px;
-    text-align: right;
-    color: rgba(0,0,0,0.4);
-}
-
-
-/* footer */
-
-footer .main {
-    width: 100%;
-    height: 200px;
-    background: var(--amarelo);
-    padding: 20px 10px;
-}
-
-.footer-links{
-    max-width: 1000px;
-    min-width: 300px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.footer-company, 
-.footer-rental, 
-.footer-contact, 
-.footer-social{
-    color:white;
-    height:100%;
-    min-height:100px;
-}
-
-.footer-links h4 {
-    margin-bottom: 10px;
-}
-
-.footer-links {
-    margin-bottom: 8px;
-}
-
-.main .footer-social img {
-    width: 32px;
-    height: 32px;
-}
-
-footer .last{
-    width: 100%;
-    height: 50px;
-    background: var(--blue);
-    color:white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+   html,
+   body {
+       width: 100%;
+       overflow-x: hidden;
+       /* O background já vem do global.css, mas garantimos a limpeza aqui */
+   }
+   
+   /* --- HEADER --- */
+   header {
+       width: 100%;
+       height: 125px;
+       background: var(--bg-deep); /* Fundo preto profundo */
+       border-bottom: var(--border-tech); /* A linha laranja fina de separação */
+   }
+   
+   .conteudo {
+       max-width: 1000px;
+       min-width: 300px;
+       margin: 0 auto;
+       display: flex;
+       flex-direction: column;
+       padding: 10px;
+   }
+   
+   nav {
+       width: 100%;
+       height: 125px;
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       justify-content: space-between;
+   }
+   
+   nav img {
+       height: 80px; /* Ajustei para ficar proporcional no header */
+       width: auto;
+       filter: drop-shadow(0 0 2px var(--nerv-orange)); /* Leve brilho no logo */
+   }
+   
+   nav ul {
+       display: flex;
+       flex-direction: row;
+   }
+   
+   nav ul li {
+       list-style: none;
+       padding: 10px;
+       cursor: pointer;
+   }
+   
+   nav ul li a {
+       color: var(--text-muted); /* Cinza claro para não cansar a vista */
+       text-decoration: none;
+       font-family: var(--font-tech);
+       transition: 0.3s;
+       text-transform: uppercase;
+   }
+   
+   nav ul li a:hover {
+       color: var(--nerv-orange); /* Acende em laranja ao passar o mouse */
+       text-shadow: var(--glow);
+   }
+   
+   /* --- BARRA DE PESQUISA & FILTROS --- */
+   
+   section .catalogo {
+       width: 100%;
+       padding: 50px 0;
+   }
+   
+   .barra-de-pesquisa {
+       margin-top: 30px;
+       padding-bottom: 20px;
+       text-align: center;
+   }
+   
+   .barra-de-pesquisa h3 {
+       color: var(--nerv-orange);
+       font-size: 2rem;
+       margin-top: 10px;
+   }
+   
+   .barra-de-pesquisa p {
+       color: var(--text-muted);
+       font-family: var(--font-tech);
+       letter-spacing: 1px;
+   }
+   
+   section .filtro-de-pesquisa {
+       width: 100%;
+       max-width: 980px;
+       height: 120px;
+       background: var(--bg-panel); /* Painel cinza tático */
+       border: var(--border-tech);
+       border-radius: 8px;
+       margin: 0 auto;
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       justify-content: center;
+       box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+   }
+   
+   .search-input {
+       width: 60%;
+       height: 50px;
+       border: 1px solid #333;
+       background-color: #ffffff;
+       border-radius: 4px 0px 0px 4px;
+       padding-left: 15px;
+       font-size: 1rem;
+   }
+   
+   .search-button {
+       width: 150px;
+       height: 50px;
+       border-radius: 0px 4px 4px 0px;
+       border: none;
+       background: var(--nerv-orange); /* O botão é o destaque */
+       color: #000; /* Texto preto para contraste máximo */
+       cursor: pointer;
+       font-size: 1.1em;
+       font-family: var(--font-tech);
+       font-weight: bold;
+       transition: 0.2s ease;
+   }
+   
+   .search-button:hover {
+       background: var(--nerv-red); /* Muda para vermelho (Alerta) no hover */
+       color: white;
+       box-shadow: var(--glow);
+   }
+   
+   /* --- CARDS DOS PRODUTOS --- */
+   
+   section .card-wrapper {
+       max-width: 1000px;
+       margin: 0 auto;
+       display: grid;
+       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Grid responsivo */
+       grid-gap: 30px;
+       padding: 50px 10px;
+   }
+   
+   section .card-item {
+       min-height: 420px;
+       background: var(--bg-panel); /* Cartão escuro */
+       border: 1px solid rgba(255, 255, 255, 0.05);
+       border-radius: 8px;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: space-between;
+       padding: 20px;
+       transition: 0.3s ease;
+   }
+   
+   section .card-item:hover {
+       border-color: var(--nerv-orange); /* Borda acende no hover */
+       transform: translateY(-5px); /* Leve flutuação */
+       box-shadow: var(--glow);
+   }
+   
+   .card-item img {
+       width: 80%;
+       max-height: 200px;
+       object-fit: contain;
+       filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+   }
+   
+   .card-content {
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       gap: 15px;
+   }
+   
+   .card-item h3 {
+       color: var(--text-primary);
+       text-align: center;
+       font-size: 1.2rem;
+   }
+   
+   .card-item button {
+       width: 100%;
+       padding: 12px 0;
+       border: none;
+       background-color: var(--nerv-orange);
+       border-radius: 4px;
+       color: var(--bg-deep); /* Texto escuro */
+       font-weight: bold;
+       font-size: 1rem;
+       cursor: pointer;
+       transition: 0.3s ease;
+   }
+   
+   .card-item button:hover {
+       background: var(--nerv-green); /* Verde de "Confirmar" */
+       color: var(--bg-deep);
+       box-shadow: 0 0 15px var(--nerv-green);
+   }
+   
+   /* --- FOOTER --- */
+   
+   footer .main {
+       width: 100%;
+       background: var(--bg-panel);
+       padding: 60px 20px;
+       border-top: var(--border-tech);
+       margin-top: 50px;
+   }
+   
+   .footer-links {
+       max-width: 1000px;
+       margin: 0 auto;
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+       flex-wrap: wrap;
+       gap: 30px;
+   }
+   
+   .footer-company, 
+   .footer-rental, 
+   .footer-contact, 
+   .footer-social {
+       color: var(--text-muted);
+   }
+   
+   .footer-links h4 {
+       margin-bottom: 15px;
+       color: var(--nerv-orange);
+       font-size: 1.1rem;
+   }
+   
+   .footer-links h6 {
+       margin-bottom: 8px;
+       font-weight: normal;
+       font-size: 0.9rem;
+       cursor: pointer;
+       transition: 0.2s;
+   }
+   
+   .footer-links h6:hover {
+       color: var(--text-primary);
+       padding-left: 5px; /* Pequeno movimento lateral */
+   }
+   
+   footer .last {
+       width: 100%;
+       padding: 20px;
+       background: var(--bg-deep);
+       color: var(--text-muted);
+       text-align: center;
+       font-size: 0.8rem;
+       font-family: var(--font-tech);
+       border-top: 1px solid #222;
+   }

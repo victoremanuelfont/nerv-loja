@@ -1,63 +1,45 @@
-/* Font importing */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* css/pecas.css - Refatorado para MAGI System */
 
-/* Resetando css*/
-*{
-    margin:0px;
-    padding:0px;
-    box-sizing:border-box;
-    outline: none;
-    font-family: "Roboto", sans-serif;
-}
+/* Global styles handle reset and vars */
 
-:root{
-    --orange: #f78b00;
-    --blue: #00285f;
-    --gray: #ededed;
-    --roxo: #5f2a62;
-    --verde: #a0de59;
-    --amarelo: #f5c024;
-    --roxo-claro: #a976c3;
-    --verde-escuro: #466b5a;
-}
-
-html,
-body{
+html, body {
     width: 100%;
     overflow-x: hidden;
 }
 
-header{
-    width: 769.14;
-    height:125px;
-    background:var(--amarelo)
-
+/* --- HEADER PADRÃO --- */
+header {
+    width: 100%;
+    height: 125px;
+    background: var(--bg-deep);
+    border-bottom: var(--border-tech);
 }
 
-.conteudo{
+.conteudo {
     max-width: 1000px;
     min-width: 300px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    padding:10px;
+    padding: 10px;
 }
 
-nav{
+nav {
     width: 100%;
-    height:125px;
+    height: 125px;
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
 nav img {
-    height: 200px; 
+    height: 80px;
     width: auto;
+    filter: drop-shadow(0 0 2px var(--nerv-orange));
 }
 
-nav ul{
+nav ul {
     display: flex;
     flex-direction: row;
 }
@@ -69,162 +51,176 @@ nav ul li {
 }
 
 nav ul li a {
-
-    color: var(--blue);
+    color: var(--text-muted);
     text-decoration: none;
+    font-family: var(--font-tech);
+    transition: 0.3s;
+    text-transform: uppercase;
 }
 
-nav ul li a:hover{
-    color:#00285f83;
+nav ul li a:hover {
+    color: var(--nerv-orange);
+    text-shadow: var(--glow);
 }
 
-.conteudo .painel{
-    max-width: 1000px;
-    min-width: 300px;
-    height: 450px;
-    background: var(--blue);
-    border-radius: 8px;
-    box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.5);
-    -webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.5);
-    -moz-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.5);
+/* --- SEÇÃO PEÇAS (GARAGEM) --- */
 
-    position: relative;
-    z-index: 10;
-    padding: 10px;
-}
-
-.painel img {
-    width: 32%;
-    position: absolute;
-    right: 9%;
-    bottom: 4%;
-}
-
-.painel .texto{
-    position: absolute;
-    bottom: 40%;
-    left: 10%;
-}
-
-.painel .texto h2{
-    color: white;
-    margin-bottom: 25px;
-    text-align: right;
-    transform: translateX(-20px);
-    transition: transform 0.5s;
-}
-
-.painel .texto p {
-    max-width:450px;
-    color: white;
-    text-align: right;
-    transform: translateX(-20px);
-    transition: transform 0.4s;
-}
-
-
-.sobre{
-    width:100%;
-    height:100%;
-    background: var(--roxo-claro);
+.pecas {
+    width: 100%;
+    min-height: 80vh;
+    background-color: var(--bg-deep);
+    /* Grid tático de fundo sutil */
+    background-image: 
+        linear-gradient(rgba(255, 157, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 157, 0, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    padding: 100px;
+    padding: 50px 0;
 }
 
-.sobre-conteudo{
+.texto-pecas {
+    padding: 20px 0;
+    text-align: left;
+    border-bottom: 1px solid #333;
+    margin-bottom: 30px;
+}
+
+.texto-pecas h3 {
+    color: var(--nerv-orange);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.texto-pecas p {
+    color: var(--text-muted);
+    font-family: var(--font-tech);
+    letter-spacing: 1px;
+}
+
+.pecas-card-block {
     max-width: 1000px;
-    min-width: 300px;
-    height: 600px;
-    background: #dedede3b;
+    width: 100%;
+    background: transparent;
     margin: 0 auto;
-    border-radius: 8px;
     z-index: 10;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); /* Grid responsivo */
+    gap: 20px;
+}
+
+/* Card de Peça Individual */
+.pecas-card-item {
+    background: var(--bg-panel);
+    height: 180px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 3px solid var(--text-muted); /* Status inativo (cinza) */
+    border-radius: 4px;
+    padding: 20px;
+    transition: 0.3s ease;
+    cursor: pointer;
 }
 
-.left {
-    width: 25%;
-    min-width: 300px;
-    height: 100%;
-    background: #000000a1;
-    border-radius: 8px;
+.pecas-card-item:hover {
+    border-color: var(--nerv-orange); /* Acende a borda */
+    border-left-color: var(--nerv-orange);
+    background: #1a1a1a;
+    transform: translateX(5px); /* Efeito tático de "gaveta" abrindo */
+    box-shadow: var(--glow);
 }
 
-.right {
-   width: 65%;
-   height: 100%;
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
-   justify-content: flex-start;
-   padding-top: 10%;
+.pecas-card-item img {
+    width: 80px;
+    height: 80px;
+    filter: grayscale(100%); /* Imagem P&B até interagir */
+    transition: 0.3s;
 }
 
-.right h3 {
-    text-align: right;
-    width: 90%;
-    margin-bottom: 20px;
+.pecas-card-item:hover img {
+    filter: grayscale(0%) drop-shadow(0 0 5px var(--nerv-orange));
 }
 
-.right p {
-    max-width: 90%;
-    font-size: 1em;
-    letter-spacing: 2px;
-    text-align: right;
-    color: rgba(0,0,0,0.4);
+.pecas-texto-conteudo {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* footer */
+.pecas-texto-conteudo h3 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
 
+.pecas-card-item:hover .pecas-texto-conteudo h3 {
+    color: var(--nerv-orange);
+}
+
+.pecas-texto-conteudo p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* --- FOOTER --- */
 footer .main {
     width: 100%;
-    height: 200px;
-    background: var(--amarelo);
-    padding: 20px 10px;
+    background: var(--bg-panel);
+    padding: 60px 20px;
+    border-top: var(--border-tech);
 }
 
-.footer-links{
+.footer-links {
     max-width: 1000px;
-    min-width: 300px;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .footer-company, 
 .footer-rental, 
 .footer-contact, 
-.footer-social{
-    color:white;
-    height:100%;
-    min-height:100px;
+.footer-social {
+    color: var(--text-muted);
 }
 
 .footer-links h4 {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: var(--nerv-orange);
+    font-size: 1.1rem;
 }
 
-.footer-links {
+.footer-links h6 {
     margin-bottom: 8px;
+    font-weight: normal;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-.main .footer-social img {
-    width: 32px;
-    height: 32px;
+.footer-links h6:hover {
+    color: var(--text-primary);
+    padding-left: 5px;
 }
 
-footer .last{
+footer .last {
     width: 100%;
-    height: 50px;
-    background: var(--blue);
-    color:white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 20px;
+    background: var(--bg-deep);
+    color: var(--text-muted);
+    text-align: center;
+    font-size: 0.8rem;
+    font-family: var(--font-tech);
+    border-top: 1px solid #222;
 }
+
