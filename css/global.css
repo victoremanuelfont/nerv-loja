@@ -1,0 +1,50 @@
+/* css/global.css */
+
+/* Fonte Tecnológica - Vamos manter a Roboto, mas prepare-se para usar fontes monoespaçadas depois */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Share+Tech+Mono&display=swap');
+
+:root {
+    /* --- PALETA MAGI SYSTEM (Design Tokens) --- */
+    
+    /* Fundos (Backgrounds) */
+    --bg-deep: #0a0a0a;       /* Preto quase absoluto (fundo do espaço) */
+    --bg-panel: #141414;      /* Cinza chumbo (paineis e cards) */
+    --bg-overlay: rgba(255, 153, 0, 0.05); /* Leve brilho laranja digital */
+
+    /* Cores de Destaque (Brand & UI) */
+    --nerv-orange: #ff9d00;   /* O clássico Laranja Âmbar dos monitores */
+    --nerv-red: #d00000;      /* Vermelho de Alerta/Emergência */
+    --nerv-green: #00ff41;    /* Verde Matrix (para status "OK") */
+    
+    /* Tipografia */
+    --text-primary: #ffffff;  /* Branco para leitura */
+    --text-muted: #888888;    /* Cinza para textos secundários */
+    --font-tech: 'Share Tech Mono', monospace; /* Fonte para dados/números */
+    --font-body: 'Roboto', sans-serif;
+
+    /* Bordas e Efeitos */
+    --border-tech: 1px solid rgba(255, 157, 0, 0.3); /* Linhas finas laranjas */
+    --glow: 0 0 10px rgba(255, 157, 0, 0.4); /* Efeito neon */
+}
+
+/* Reset Básico Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    /* Removemos a font-family daqui para controlar especificamente depois */
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+}
+
+/* Títulos e Elementos Técnicos ganham a fonte monoespaçada */
+h1, h2, h3, h4, h5, h6, button, .price {
+    font-family: var(--font-tech);
+    text-transform: uppercase; /* Interface militar usa muito caixa alta */
+    letter-spacing: 2px;
+}
