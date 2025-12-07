@@ -48,3 +48,30 @@ h1, h2, h3, h4, h5, h6, button, .price {
     text-transform: uppercase; /* Interface militar usa muito caixa alta */
     letter-spacing: 2px;
 }
+
+/* --- ESTILO DO CARRINHO (Adicione ao final do global.css) --- */
+
+#carrinho-link a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#contagem-carrinho {
+    background-color: var(--nerv-orange);
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 12px;
+    min-width: 20px;
+    text-align: center;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Classe que o JS ativa quando você compra algo */
+#contagem-carrinho.ativo {
+    background-color: var(--nerv-green);
+    box-shadow: 0 0 10px var(--nerv-green); /* Brilho neon */
+    transform: scale(1.1);
+}
