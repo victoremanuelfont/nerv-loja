@@ -1,185 +1,128 @@
-/* Font importing */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* css/style.css - Home Específica */
 
-/* Resetando css*/
-*{
-    margin:0px;
-    padding:0px;
-    box-sizing:border-box;
-    outline: none;
-    font-family: "Roboto", sans-serif;
-}
-
-:root{
-    --orange: #f78b00;
-    --blue: #00285f;
-    --gray: #ededed;
-    --roxo: #5f2a62;
-    --verde: #a0de59;
-    --amarelo: #f5c024;
-    --roxo-claro: #a976c3;
-    --verde-escuro: #466b5a;
-}
-
-html,
-body{
-    width: 100%;
-    overflow-x: hidden;
-}
-
-header{
-    width: 100%;
-    height:500px;
-    background:var(--amarelo)
-
-}
-
-.conteudo{
-    max-width: 1000px;
-    min-width: 300px;
-    margin: 0 auto;
+/* Centraliza o painel na tela verticalmente e horizontalmente */
+.hero-section {
     display: flex;
-    flex-direction: column;
-    padding:10px;
-}
-
-nav{
-    width: 100%;
-    height:125px;
-    display: flex;
-    flex-direction:row;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    min-height: calc(100vh - 80px); /* Altura da tela menos o cabeçalho */
+    padding: 40px 20px;
 }
 
-nav img {
-    height: 200px; 
-    width: auto;
-}
+/* O Retângulo Principal */
+.painel {
+    width: 100%;
+    max-width: 1100px;
+    
+    background-color: var(--bg-panel);
+    /* Efeito de grade sutil */
+    background-image: 
+        linear-gradient(rgba(255, 157, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 157, 0, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
 
-nav ul{
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid var(--nerv-orange);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+
+    /* Layout Lado a Lado (Texto Esq | Img Dir) */
     display: flex;
     flex-direction: row;
-}
-
-nav ul li {
-    list-style: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-nav ul li a {
-
-    color: var(--blue);
-    text-decoration: none;
-}
-
-nav ul li a:hover{
-    color:#00285f83;
-}
-
-.conteudo .painel{
-    max-width: 1000px;
-    min-width: 300px;
-    height: 450px;
-    background: var(--blue);
-    border-radius: 8px;
-    box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.5);
-    -webkit-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.5);
-    -moz-box-shadow: 1px 0px 10px 0px rgba(0,0,0,0.5);
-
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 60px;
     position: relative;
-    z-index: 10;
-    padding: 10px;
+    overflow: hidden;
 }
 
-.painel img {
-    width: 32%;
-    position: absolute;
-    right: 9%;
-    bottom: 4%;
+/* Área de Texto */
+.painel .texto {
+    flex: 1; /* Ocupa espaço disponível */
+    padding-right: 40px;
+    z-index: 2;
 }
 
-.painel .texto{
-    position: absolute;
-    bottom: 40%;
-    left: 10%;
-}
-
-.painel .texto h2{
-    color: white;
-    margin-bottom: 25px;
-    text-align: right;
-    transform: translateX(-20px);
-    transition: transform 0.5s;
+.painel .texto h2 {
+    color: var(--nerv-orange);
+    font-family: var(--font-tech);
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .painel .texto p {
-    max-width:450px;
-    color: white;
-    text-align: right;
-    transform: translateX(-20px);
-    transition: transform 0.4s;
+    color: #ddd;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 500px;
 }
 
+/* Botão Estilizado (Classe criada no HTML novo) */
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--nerv-orange);
+    color: #000;
+    font-weight: bold;
+    font-family: var(--font-tech);
+    border-radius: 4px;
+    transition: 0.3s;
+    border: none;
+    letter-spacing: 1px;
+}
 
-/* footer */
+.cta-button:hover {
+    background-color: #fff;
+    box-shadow: 0 0 15px var(--nerv-orange);
+}
 
-footer .main {
+/* Imagem do EVA */
+.painel img {
+    flex: 1;
+    max-width: 450px; /* Controla para não estourar */
     width: 100%;
-    height: 200px;
-    background: var(--amarelo);
-    padding: 200px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(100, 0, 200, 0.3));
+    z-index: 1;
 }
 
-.footer-links{
-    max-width: 1000px;
-    min-width: 300px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 20px;
+/* --- MOBILE DO PAINEL --- */
+@media (max-width: 900px) {
+    /* Remove a altura fixa da tela, pois o menu mobile ocupa espaço */
+    .hero-section {
+        min-height: auto; 
+        height: auto;
+        padding: 40px 20px;
+        display: block; /* Remove o centro vertical forçado */
+    }
+
+    .painel {
+        flex-direction: column-reverse; /* Imagem em cima, texto embaixo */
+        text-align: center;
+        padding: 30px 20px;
+        height: auto;
+        margin-top: 20px; /* Afasta um pouco do menu */
+    }
+
+    .painel .texto {
+        padding-right: 0;
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .painel .texto h2 {
+        font-size: 1.8rem; /* Fonte um pouco menor para não quebrar */
+    }
+
+    .painel img {
+        width: 70%; /* Imagem não ocupa a largura toda */
+        max-width: 250px;
+        margin: 0 auto; /* Centraliza a imagem */
+        display: block;
+    }
 }
-
-.footer-company, 
-.footer-rental, 
-.footer-contact, 
-.footer-social{
-    color:white;
-    height:100%;
-    min-height:100px;
-}
-
-.footer-links h4 {
-    margin-bottom: 10px;
-}
-
-.footer-links {
-    margin-bottom: 8px;
-}
-
-.main .footer-social img {
-    width: 32px;
-    height: 32px;
-}
-
-footer .last{
-    width: 100%;
-    height: 50px;
-    background: var(--blue);
-    color:white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-
-
-
-
-
-
-
-

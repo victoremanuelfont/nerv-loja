@@ -1,39 +1,27 @@
-/* css/global.css */
+/* css/global.css - Estilos Gerais (Menu e Rodapé) */
 
-/* Fonte Tecnológica - Vamos manter a Roboto, mas prepare-se para usar fontes monoespaçadas depois */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Share+Tech+Mono&display=swap');
 
 :root {
-    /* --- PALETA MAGI SYSTEM (Design Tokens) --- */
+    /* --- CORES --- */
+    --bg-deep: #0a0a0a;
+    --bg-panel: #141414;
+    --nerv-orange: #ff9d00;
+    --nerv-green: #00ff41;
+    --text-primary: #ffffff;
+    --text-muted: #888888;
     
-    /* Fundos (Backgrounds) */
-    --bg-deep: #0a0a0a;       /* Preto quase absoluto (fundo do espaço) */
-    --bg-panel: #141414;      /* Cinza chumbo (paineis e cards) */
-    --bg-overlay: rgba(255, 153, 0, 0.05); /* Leve brilho laranja digital */
-
-    /* Cores de Destaque (Brand & UI) */
-    --nerv-orange: #ff9d00;   /* O clássico Laranja Âmbar dos monitores */
-    --nerv-red: #d00000;      /* Vermelho de Alerta/Emergência */
-    --nerv-green: #00ff41;    /* Verde Matrix (para status "OK") */
-    
-    /* Tipografia */
-    --text-primary: #ffffff;  /* Branco para leitura */
-    --text-muted: #888888;    /* Cinza para textos secundários */
-    --font-tech: 'Share Tech Mono', monospace; /* Fonte para dados/números */
+    /* --- FONTES --- */
+    --font-tech: 'Share Tech Mono', monospace;
     --font-body: 'Roboto', sans-serif;
-
-    /* Bordas e Efeitos */
-    --border-tech: 1px solid rgba(255, 157, 0, 0.3); /* Linhas finas laranjas */
-    --glow: 0 0 10px rgba(255, 157, 0, 0.4); /* Efeito neon */
 }
 
-/* Reset Básico Global */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: none;
-    /* Removemos a font-family daqui para controlar especificamente depois */
+    text-decoration: none;
+    list-style: none;
 }
 
 body {
@@ -42,36 +30,188 @@ body {
     font-family: var(--font-body);
 }
 
-/* Títulos e Elementos Técnicos ganham a fonte monoespaçada */
-h1, h2, h3, h4, h5, h6, button, .price {
-    font-family: var(--font-tech);
-    text-transform: uppercase; /* Interface militar usa muito caixa alta */
-    letter-spacing: 2px;
+/* --- CONFIGURAÇÃO DO CABEÇALHO (HEADER) --- */
+header {
+    background-color: #000; /* Garante fundo preto no menu */
+    border-bottom: 1px solid rgba(255, 157, 0, 0.2);
+    width: 100%;
 }
 
-/* --- ESTILO DO CARRINHO (Adicione ao final do global.css) --- */
+.conteudo {
+    max-width: 1200px; /* Limita a largura para não esticar demais */
+    margin: 0 auto;    /* Centraliza */
+    padding: 0 20px;
+}
 
-#carrinho-link a {
-    display: flex;
+nav {
+    display: flex; /* Mágica que coloca Logo e Menu lado a lado */
+    justify-content: space-between;
     align-items: center;
-    gap: 8px;
+    height: 80px; /* Altura fixa do cabeçalho */
 }
 
+.header-logo {
+    height: 50px;           /* Controla a altura para não ficar gigante */
+    width: auto;            /* Mantém a proporção */
+    display: block;
+    
+    /* ISSO AQUI ADICIONA O BRILHO ROXO/NEON NO LOGO */
+    filter: drop-shadow(0 0 5px rgba(138, 43, 226, 0.6)); 
+    transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.1);             /* Aumenta um pouco ao passar o mouse */
+    filter: drop-shadow(0 0 10px rgba(138, 43, 226, 1)); /* Brilha mais forte */
+}
+
+/* O Menu (Links) */
+.nav-links {
+    display: flex; /* Coloca os links um ao lado do outro */
+    gap: 30px;     /* Espaço entre os links */
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    font-family: var(--font-tech);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--nerv-orange);
+}
+
+/* Carrinho */
 #contagem-carrinho {
     background-color: var(--nerv-orange);
     color: #000;
     font-size: 0.8rem;
     font-weight: bold;
-    padding: 2px 8px;
-    border-radius: 12px;
-    min-width: 20px;
-    text-align: center;
-    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 2px 6px;
+    border-radius: 50%;
+    margin-left: 5px;
 }
 
-/* Classe que o JS ativa quando você compra algo */
-#contagem-carrinho.ativo {
-    background-color: var(--nerv-green);
-    box-shadow: 0 0 10px var(--nerv-green); /* Brilho neon */
-    transform: scale(1.1);
+/* --- CONFIGURAÇÃO DO RODAPÉ (FOOTER) --- */
+footer {
+    background-color: #111;
+    padding-top: 50px;
+    border-top: 1px solid #333;
+    margin-top: 50px;
+}
+
+.main-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-links {
+    display: flex; /* Coloca as colunas do rodapé lado a lado */
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite quebrar linha se a tela for pequena */
+    gap: 40px;
+}
+
+.footer-column h4 {
+    color: var(--nerv-orange);
+    margin-bottom: 15px;
+    font-family: var(--font-tech);
+    text-transform: uppercase;
+}
+
+.footer-column h6 {
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    font-weight: normal;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* Ícones Sociais */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 24px;   /* Trava tamanho dos ícones */
+    height: 24px;
+    filter: invert(1); /* Deixa branco */
+    transition: transform 0.2s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.last {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #222;
+    color: #555;
+    font-size: 0.8rem;
+}
+
+/* --- RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 768px) {
+    /* O Cabeçalho se ajusta ao conteúdo */
+    header {
+        height: auto;
+        padding: 15px 0;
+    }
+
+    nav {
+        flex-direction: column; /* Empilha Logo e Links */
+        height: auto;
+        gap: 15px;
+    }
+
+    /* Logo um pouco menor no celular */
+    .header-logo {
+        height: 40px; 
+    }
+    
+    /* Lista de links centralizada e compacta */
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px; /* Menos espaço entre os itens */
+        margin-top: 10px;
+    }
+
+    /* Estilo de botão para facilitar o toque no celular */
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.05); /* Fundo sutil */
+        border-radius: 8px;
+    }
+
+    /* O Carrinho fica centralizado */
+    #carrinho-link {
+        margin-top: 5px;
+        justify-content: center;
+        display: flex;
+    }
+
+    /* Ajuste do rodapé para celular */
+    .footer-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
 }

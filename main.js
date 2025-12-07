@@ -209,12 +209,31 @@ const catalogo = [
     });
   }
   
-  // 6. Inicialização Global
-  window.addEventListener("load", () => {
-    renderizarCatalogo();
-    renderizarPecas();
-    carregarProduto();
-    configurarBusca();
+ /* --- FUNÇÃO MOBILE: Menu Hambúrguer (CORRIGIDA) --- */
+// Usamos window.toggleMenu para garantir que o HTML enxergue a função
+window.toggleMenu = () => {
+    const menuLista = document.querySelector("nav ul");
+    const menuBotao = document.querySelector(".menu-toggle");
     
-    atualizarContador(); // <--- NOVO: Carrega o número do carrinho ao abrir a página
-  });
+    if (menuLista) {
+        // Adiciona/Remove a classe 'ativo' que faz o menu aparecer
+        menuLista.classList.toggle("ativo");
+        
+        // Troca o ícone de ☰ para X
+        if (menuLista.classList.contains("ativo")) {
+            menuBotao.innerText = "✕";
+        } else {
+            menuBotao.innerText = "☰";
+        }
+    }
+}
+
+// 6. Inicialização Global
+window.addEventListener("load", () => {
+  renderizarCatalogo();
+  renderizarPecas();
+  carregarProduto();
+  configurarBusca();
+  atualizarContador();
+  // NOTA: Não chamamos o toggleMenu() aqui, ele só roda quando clica no botão!
+});

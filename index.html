@@ -1,81 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NERV</title>
+    <title>NERV - Home</title>
     <link rel="stylesheet" href="css/global.css"/>
     <link rel="stylesheet" href="css/style.css"/>
+    <script src="./main.js" defer></script>
 </head>
 <body>
 
     <header>
         <div class="conteudo">
             <nav>
-                <div>
-                <img src="images/logo-01- 1.png"/>
+                <div class="logo-area">
+                    <a href="index.html">
+                        <img src="images/logo-01- 1.png" alt="NERV Logo" class="header-logo"/>
+                    </a>
                 </div>
-                <ul>
+
+                <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="catalogo.html">Catálogo</a></li>
                     <li><a href="pecas.html">Peças</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
                     
-                    <li id="carrinho-link" style="position: relative;">
+                    <li id="carrinho-link">
                         <a href="#">
                             🛒 <span id="contagem-carrinho">0</span>
                         </a>
                     </li>
                 </ul>
             </nav>
-            <div class="painel">
-                <div class="texto">
-                    <h2>O Próximo Nível da Evolução Humana</h2>
-                    <p>Projetado para gerar Campos A.T. e operar sob condições extremas. Nada se compara à potência bruta de uma Unidade Evangelion. Conheça o motor que salvará a humanidade.</p>
-                </div>
-                <img src="images/eva-01-header-laranja 1.png" alt="eva-01"/>
-            </div>
         </div>
     </header>
 
+    <section class="hero-section">
+        <div class="painel">
+            <div class="texto">
+                <h2>O Próximo Nível da Evolução Humana</h2>
+                <p>Projetado para gerar Campos A.T. e operar sob condições extremas. Nada se compara à potência bruta de uma Unidade Evangelion. Conheça o motor que salvará a humanidade.</p>
+                
+                <a href="catalogo.html" class="cta-button">VER MODELOS</a>
+            </div>
+            <img src="images/eva-01-header-laranja 1.png" alt="Unidade 01"/>
+        </div>
+    </section>
+
     <footer>
-        <div class="main">
-            <div class="content footer-links">
-                <div class="footer-company">
+        <div class="main-footer">
+            <div class="footer-links">
+                <div class="footer-column">
                     <h4>Company</h4>
                     <h6>About</h6>
                     <h6>Contact</h6>
                 </div>
-                <div class="footer-rental">
+                <div class="footer-column">
                     <h4>Rental</h4>
-                    <h6>Self-Drive</h6>
-                    <h6>Chauffer-Driven</h6>
                     <h6>Help</h6>
                 </div>
-                <div class="footer-social">
+                <div class="footer-column">
                     <h4>Stay connected</h4>
                     <div class="social-icons">
                         <img src="images/instagram.png" alt="instagram"/>
                         <img src="images/facebook.png" alt="facebook"/>
                     </div>
                 </div>
-                <div class="footer-contact">
+                <div class="footer-column">
                     <h4>Contact us</h4>
-                    <h6>+55 31 545845445541</h6>
                     <h6>ufc@gmail.com</h6>
-                    <h6>nome da rua, ceará</h6>
                 </div>
             </div>
         </div>
         <div class="last">NERV: A única linha entre a humanidade e o apocalipse.</div>
-
-        
-
     </footer>
 
-
-
-    
-    
 </body>
 </html>
